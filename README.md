@@ -1,3 +1,5 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/L1ghtn1ng/gowol)](https://goreportcard.com/report/github.com/L1ghtn1ng/gowol)
+
 To install the Wake-on-LAN (WoL) module ("gowol"), you can use the go install command:
 ```go
 go install github.com/L1ghtn1ng/gowol

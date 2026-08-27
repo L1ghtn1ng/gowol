@@ -1,3 +1,3 @@
 module github.com/L1ghtn1ng/gowol
 
-go 1.26
+go 1.27

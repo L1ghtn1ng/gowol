@@ -26,7 +26,7 @@ func sendMagicPacket(macAddress string, ipAddress string, port int) error {
 	}
 
 	var dialer net.Dialer
-	// DialUDP uses typed netip addresses in Go 1.26, avoiding host:port string formatting.
+	// DialUDP uses typed netip addresses, avoiding host:port string formatting.
 	conn, err := dialer.DialUDP(context.Background(), "udp", netip.AddrPort{}, remoteAddr)
 	if err != nil {
 		return fmt.Errorf("error dialing UDP: %w", err)

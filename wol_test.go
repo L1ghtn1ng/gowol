@@ -13,7 +13,7 @@ func TestSendMagicPacket(test *testing.T) {
 		if err != nil {
 			t.Fatalf("listen UDP: %v", err)
 		}
-		defer conn.Close()
+		defer func() { _ = conn.Close() }()
 
 		if err := conn.SetReadDeadline(time.Now().Add(time.Second)); err != nil {
 			t.Fatalf("set read deadline: %v", err)

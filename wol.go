@@ -31,7 +31,7 @@ func sendMagicPacket(macAddress string, ipAddress string, port int) error {
 	if err != nil {
 		return fmt.Errorf("error dialing UDP: %w", err)
 	}
-	defer conn.Close()
+	defer func() { _ = conn.Close() }()
 
 	if _, err := conn.Write(magicPacket); err != nil {
 		return fmt.Errorf("error sending magic packet: %w", err)

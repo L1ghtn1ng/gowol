@@ -11,7 +11,7 @@ jobs:
   test:
     strategy:
       matrix:
-        go-version: ['1.27']
+        go-version: ['1.27.3']
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
 
@@ -32,3 +32,9 @@ jobs:
 
       - name: Run tests
         run: go test ./... -v -cover
+
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@ba0d7d2ec06a0ea1cb5fa41b2e4a3ab91d21278a # v9.3.0
+        with:
+          version: v2.15.0
+          skip-cache: true
